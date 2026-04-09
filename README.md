@@ -18,7 +18,7 @@ Add to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-uov-rs = "0.1.0"
+uov-rs = "0.1.1"
 ```
 
 Or, if/when published to crates.io, replace the path dependency with a version.
