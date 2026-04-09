@@ -1,5 +1,6 @@
 use aes::Aes128;
 use cipher::{KeyIvInit, StreamCipher};
+use rand::{rngs::OsRng, RngCore};
 use sha3::{
     digest::{ExtendableOutput, Update, XofReader},
     Shake256,
@@ -808,8 +809,5 @@ impl Signature {
 }
 
 fn getrandom(buf: &mut [u8]) {
-    // Use OS randomness via std
-    use std::io::Read;
-    let mut f = std::fs::File::open("/dev/urandom").expect("failed to open /dev/urandom");
-    f.read_exact(buf).expect("failed to read random bytes");
+    OsRng.fill_bytes(buf);
 }

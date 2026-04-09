@@ -8,6 +8,7 @@ aes = "0.8"
 ctr = "0.9"
 sha3 = "0.10"
 cipher = "0.4"
+rand = "0.8"
 
 [dev-dependencies]
 aes = "0.8"
