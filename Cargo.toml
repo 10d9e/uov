@@ -9,6 +9,9 @@ keywords = ["cryptography", "signature", "post-quantum"]
 categories = ["cryptography"]
 exclude = ["target/**"]
 
+repository = "https://github.com/10d9e/uov"
+homepage = "https://github.com/10d9e/uov"
+
 [dependencies]
 aes = "0.8"
 ctr = "0.9"
