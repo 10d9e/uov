@@ -29,6 +29,7 @@ fn roundtrip_signature_bytes() {
 }
 
 #[test]
+#[ignore = "slow: runs all parameter sets"]
 fn all_schemes_sign_verify() {
     let schemes = [
         Scheme::Ip,

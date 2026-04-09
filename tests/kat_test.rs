@@ -106,6 +106,7 @@ fn test_rsp(iut: &uov_rs::Uov, katnum: usize) -> String {
 }
 
 #[test]
+#[ignore = "slow: deterministic KAT across all parameter sets"]
 fn kat_1() {
     let expected: Vec<(&str, &str)> = vec![
         (

@@ -1,4 +1,5 @@
 use criterion::{criterion_group, criterion_main, Criterion};
+use std::time::Duration;
 use uov_rs::{KeyPair, Scheme};
 
 fn bench_scheme(c: &mut Criterion, scheme: Scheme, name: &str) {
@@ -43,7 +44,10 @@ fn bench_all(c: &mut Criterion) {
 
 criterion_group! {
     name = benches;
-    config = Criterion::default().sample_size(10);
+    config = Criterion::default()
+        .sample_size(5)
+        .warm_up_time(Duration::from_millis(500))
+        .measurement_time(Duration::from_secs(2));
     targets = bench_all
 }
 criterion_main!(benches);
